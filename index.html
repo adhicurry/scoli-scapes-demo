@@ -46,6 +46,7 @@
       padding: 0.8rem 2.4rem 0.8rem 2.4rem;
       z-index: 50;
       box-shadow: 0 1px 12px rgba(44, 80, 22, 0.03);
+      border-bottom: 1px solid rgba(45,80,22,0.06);
     }
     .nav-logo {
       font-size: 1.85rem;
@@ -79,43 +80,53 @@
     }
     /* HERO */
     .hero {
-      min-height: 380px;
-      background: linear-gradient(rgba(45,80,22,0.31),rgba(45,80,22,0.79)), url('https://images.pexels.com/photos/1453499/pexels-photo-1453499.jpeg?auto=compress&cs=tinysrgb&w=1200') center/cover no-repeat;
+      min-height: 440px;
+      background: linear-gradient(160deg, rgba(30,60,15,0.55), rgba(45,80,22,0.82)), url('https://images.pexels.com/photos/1453499/pexels-photo-1453499.jpeg?auto=compress&cs=tinysrgb&w=1200') center/cover no-repeat;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 100px 1rem 76px 1rem;
+      padding: 110px 1rem 86px 1rem;
       text-align: center;
       color: #fff;
       position: relative;
     }
     .hero h1 {
-      font-size: 2.55rem;
+      font-size: 2.9rem;
       font-weight: 700;
-      margin: 0 0 1.1rem 0;
+      margin: 0 0 0.6rem 0;
       letter-spacing: 0.01em;
       color: #fff;
-      text-shadow: 0 3px 18px rgba(44,80,22,0.18);
+      text-shadow: 0 3px 24px rgba(0,0,0,0.25);
+    }
+    .hero .hero-sub {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #c8e6b0;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
     }
     .hero p {
-      font-size: 1.25rem;
+      font-size: 1.18rem;
       font-weight: 400;
       margin-bottom: 2.3rem;
-      color: #fffaef;
-      text-shadow: 0 2px 12px rgba(44,80,22,0.22);
+      color: rgba(255,255,255,0.88);
+      text-shadow: 0 2px 12px rgba(0,0,0,0.18);
+      max-width: 540px;
     }
     .hero .cta {
       background: var(--green);
       color: #fff;
-      font-size: 1.09rem;
+      font-size: 1.12rem;
       border: none;
-      padding: 0.94rem 2.36rem;
-      border-radius: var(--radius);
+      padding: 1rem 2.8rem;
+      border-radius: 99px;
       font-weight: 700;
-      box-shadow: 0 1px 18px rgba(44,80,22,0.11);
+      box-shadow: 0 4px 24px rgba(44,80,22,0.25);
       cursor: pointer;
       transition: background 0.19s, transform 0.13s;
+      letter-spacing: 0.02em;
     }
     .hero .cta:hover {
       background: #234011;
@@ -133,26 +144,38 @@
       flex-wrap: wrap;
     }
     .pill {
-      background: #fff;
+      background: rgba(255,255,255,0.95);
       color: var(--green);
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.95rem;
       border-radius: 99px;
-      box-shadow: var(--shadow);
-      padding: 0.84rem 1.7rem;
-      margin-bottom: 0.7rem;
-      border: 1.4px solid #e6e2d9;
+      box-shadow: 0 2px 16px rgba(44,80,22,0.10);
+      padding: 0.78rem 1.5rem;
+      margin-bottom: 0.5rem;
+      border: 1.5px solid rgba(45,80,22,0.12);
       letter-spacing: 0.01em;
+      backdrop-filter: blur(6px);
     }
     /* SERVICES */
     .section-title {
       text-align: center;
-      font-size: 2.1rem;
+      font-size: 1.9rem;
       font-weight: 700;
       letter-spacing: 0.01em;
       color: var(--green);
-      margin-bottom: 1.25rem;
-      margin-top: 0.2rem;
+      margin-bottom: 1.5rem;
+      margin-top: 0.5rem;
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: var(--green);
+      margin: 0.6rem auto 0;
+      border-radius: 2px;
+      opacity: 0.4;
     }
     .services {
       display: grid;
@@ -174,7 +197,19 @@
       transition: box-shadow 0.15s;
     }
     .service-card:hover {
-      box-shadow: 0 4px 24px rgba(44,80,22,0.19);
+      box-shadow: 0 6px 28px rgba(44,80,22,0.18);
+      transform: translateY(-3px);
+    }
+    .service-card {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      flex: 1 0 190px;
+      min-width: 0;
+      transition: box-shadow 0.2s, transform 0.2s;
     }
     .service-img {
       width: 100%;
@@ -226,11 +261,28 @@
     }
     .how-step svg {
       margin-bottom: 1.1rem;
-      width: 42px;
-      height: 42px;
-      fill: var(--green);
+      width: 48px;
+      height: 48px;
+      fill: none;
+      stroke: var(--green);
       display: block;
       flex-shrink: 0;
+    }
+    .how-step {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2.5rem 1.3rem 1.5rem 1.3rem;
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 0;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .how-step:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 28px rgba(44,80,22,0.15);
     }
     .how-step-title {
       color: var(--green);
@@ -249,26 +301,27 @@
       background: #fff;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 2.5rem 1.2rem 2.2rem 1.2rem;
-      max-width: 800px;
+      padding: 2.5rem 2rem 2.2rem 2rem;
+      max-width: 850px;
       margin: 0 auto 2.9rem auto;
       display: flex;
       flex-direction: row;
-      align-items: flex-start;
+      align-items: center;
       gap: 2.2rem;
     }
     .about-img {
-      width: 180px;
-      height: 160px;
+      width: 220px;
+      height: 200px;
       object-fit: cover;
       border-radius: var(--radius);
-      box-shadow: 0 2px 8px #e9dfc6;
+      box-shadow: 0 4px 18px rgba(44,80,22,0.12);
       flex-shrink: 0;
     }
     .about-text {
-      font-size: 1.09rem;
+      font-size: 1.08rem;
       font-weight: 400;
       color: var(--charcoal);
+      line-height: 1.7;
     }
     /* -- FAQ ACCORDION -- */
     .faq-section {
@@ -334,7 +387,7 @@
     /* CONTACT FORM */
     .contact-section {
       max-width: 600px;
-      margin: 2.4rem auto 3rem auto;
+      margin: 2.4rem auto 0 auto;
       background: #fff;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -419,16 +472,15 @@
     }
     /* FOOTER */
     footer {
-      background: #e3d6ca;
-      color: var(--green);
-      padding: 2rem 1.2rem 1.25rem 1.2rem;
+      background: #1a2e0f;
+      color: #c8e6b0;
+      padding: 2.5rem 1.2rem 1.5rem 1.2rem;
       text-align: center;
-      border-top-left-radius: var(--radius);
-      border-top-right-radius: var(--radius);
-      box-shadow: 0 -2px 12px rgba(44,80,22,0.06);
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
       font-size: 1rem;
       letter-spacing: 0.01em;
-      margin-top: 2.9rem;
+      margin-top: 3.5rem;
     }
     .footer-links {
       display: flex;
@@ -438,12 +490,14 @@
       flex-wrap: wrap;
     }
     .footer-links a {
-      color: var(--green);
+      color: #c8e6b0;
       font-weight: 600;
     }
+    .footer-links a:hover {
+      color: #fff;
+    }
     .footer-copy {
-      color: var(--charcoal);
-      opacity: 0.92;
+      color: rgba(255,255,255,0.45);
       font-size: 0.97rem;
       margin-top: 0.6rem;
     }
@@ -510,6 +564,7 @@
   
   <!-- Hero -->
   <section class="hero" id="hero">
+    <div class="hero-sub">Veteran-Owned · Family-Run</div>
     <h1>Your Lawn, Our Passion</h1>
     <p>Family-owned landscaping serving Hummelstown, Hershey & Harrisburg, PA</p>
     <a href="#contact"><button class="cta">Get a Free Estimate</button></a>
@@ -647,7 +702,7 @@
   </section>
   <div class="toast" id="toast">Thank you! We received your request and will be in touch soon.</div>
   <!-- Mobile CTA bar -->
-  <a href="tel:17175551234"><div class="mobile-cta-bar">Call for Free Estimate</div></a>
+  <a href="#contact"><div class="mobile-cta-bar">Get a Free Estimate</div></a>
   <!-- Footer -->
   <footer>
     <div>Scoli Scapes &mdash; Hummelstown PA</div>
